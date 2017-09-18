@@ -9,22 +9,39 @@ namespace HospitalProject
     class Surgeon: EmployeeBase
     {
         private string surgeonSpecialty;
-        private bool isOperating;
 
         public string SurgeonSpecialty
         {
             get { return this.surgeonSpecialty; }
         }
 
-        public bool IsOperating
+
+        public Surgeon (string employeeName, int employeeNumber, bool isWorking, string surgeonSpecialty)
         {
-            get { return this.isOperating; }
+            this.employeeName = employeeName;
+            this.employeeNumber = employeeNumber;
+            this.isWorking = isWorking;
+            this.surgeonSpecialty = surgeonSpecialty;
         }
 
-        public Surgeon (string employeeName, int employeeNumber)
+        public override void DisplayStatus()
         {
-            this.surgeonSpecialty = surgeonSpecialty;
-            this.isOperating = isOperating;
+            Console.Write(employeeName + "\t");
+            Console.Write(employeeNumber + "\t");
+            Console.Write(isWorking + "\t");
+            Console.Write(surgeonSpecialty + "\n");
+        }
+
+        public override void DisplayWorking()
+        {
+            if (isWorking == true)
+            {
+                Console.WriteLine(employeeName + " is operating now.");
+            }
+            else
+            {
+                Console.WriteLine(employeeName + " is not operating now.");
+            }
         }
     }
 }

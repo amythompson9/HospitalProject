@@ -15,9 +15,19 @@ namespace HospitalProject
             get { return this.numberOfPatients; }
         }
 
-        public Nurse(string employeeName, int employeeNumber)
+        public Nurse(string employeeName, int employeeNumber, bool isWorking, int numberOfPatients)
         {
+            this.employeeName = employeeName;
+            this.employeeNumber = employeeNumber;
+            this.isWorking = isWorking;
             this.numberOfPatients = numberOfPatients;
+        }
+
+        public override void DisplayStatus()
+        {
+            Console.Write(employeeName + "\t");
+            Console.Write(employeeNumber + "\t");
+            Console.Write(numberOfPatients + "\n");
         }
     }
 }

@@ -9,22 +9,38 @@ namespace HospitalProject
     class Janitor: EmployeeBase
     {
         private string janitorDepartment;
-        private bool isSweeping;
 
         public string JanitorDepartment
         {
             get { return this.janitorDepartment; }
         }
 
-        public bool IsSweeping
+        public Janitor(string employeeName, int employeeNumber,bool isWorking, string janitorDepartment)
         {
-            get { return this.isSweeping; }
+            this.employeeName = employeeName;
+            this.employeeNumber = employeeNumber;
+            this.isWorking = isWorking;
+            this.janitorDepartment = janitorDepartment;
         }
 
-        public Janitor(string employeeName, int employeeNumber)
+        public override void DisplayStatus()
         {
-            this.janitorDepartment = janitorDepartment;
-            this.isSweeping = isSweeping;
+            Console.Write(employeeName + "\t");
+            Console.Write(employeeNumber + "\t");
+            Console.Write(isWorking + "\t");
+            Console.Write(janitorDepartment + "\n");
+        }
+
+        public override void DisplayWorking()
+        {
+            if (isWorking == true)
+            {
+                Console.WriteLine(employeeName + " is sweeping now.");
+            }
+            else
+            {
+                Console.WriteLine(employeeName + " is not sweeping now.");
+            }
         }
     }
 }

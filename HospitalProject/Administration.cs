@@ -15,9 +15,20 @@ namespace HospitalProject
             get { return this.adminDepartment; }
         }
 
-        public Administration(string employeeName, int employeeNumber)
+        public Administration(string employeeName, int employeeNumber, bool isWorking, string adminDepartment)
         {
+            this.employeeName = employeeName;
+            this.employeeNumber = employeeNumber;
+            this.isWorking = isWorking;
             this.adminDepartment = adminDepartment;
+        }
+
+        public override void DisplayStatus()
+        {
+            Console.Write(employeeName + "\t");
+            Console.Write(employeeNumber + "\t");
+            Console.Write(isWorking + "\t");
+            Console.Write(adminDepartment + "\n");
         }
     }
 }

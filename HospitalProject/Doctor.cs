@@ -15,9 +15,22 @@ namespace HospitalProject
             get { return this.specialtyArea; }
         }
 
-        public Doctor (string employeeName, int employeeNumber)
+        public Doctor (string employeeName, int employeeNumber, bool isWorking, string specialtyArea)
         {
+            this.employeeName = employeeName;
+            this.employeeNumber = employeeNumber;
+            this.isWorking = isWorking;
             this.specialtyArea = specialtyArea;
         }
+
+        public override void DisplayStatus()
+        {
+            Console.Write(employeeName + "\t");
+            Console.Write(employeeNumber + "\t");
+            Console.Write(isWorking + "\t");
+            Console.Write(specialtyArea + "\n");
+        }
+
+
     }
 }

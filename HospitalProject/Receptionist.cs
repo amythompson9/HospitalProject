@@ -9,22 +9,38 @@ namespace HospitalProject
     class Receptionist: EmployeeBase
     {
         private string receptionistDepartment;
-        private bool onPhone;
 
         public string ReceptionistDepartment
         {
             get { return this.receptionistDepartment; }
         }
 
-        public bool OnPhone
+        public Receptionist(string employeeName, int employeeNumber, bool isWorking, string receptionistDepartment)
         {
-            get { return this.onPhone; }
+            this.employeeName = employeeName;
+            this.employeeNumber = employeeNumber;
+            this.isWorking = isWorking;
+            this.receptionistDepartment = receptionistDepartment;
         }
 
-        public Receptionist(string employeeName, int employeeNumber)
+        public override void DisplayStatus()
         {
-            this.receptionistDepartment = receptionistDepartment;
-            this.onPhone = onPhone;
+            Console.Write(employeeName + "\t");
+            Console.Write(employeeNumber + "\t");
+            Console.Write(isWorking + "\t");
+            Console.Write(receptionistDepartment + "\n");
+        }
+
+        public override void DisplayWorking()
+        {
+            if (isWorking == true)
+            {
+                Console.WriteLine(employeeName + " is on the phone now.");
+            }
+            else
+            {
+                Console.WriteLine(employeeName + " is not on the phone.");
+            }
         }
     }
 }
